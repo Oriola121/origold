@@ -5,7 +5,7 @@ import styled from 'styled-components'
 function Top() {
   return (
     <Topcont>
-        <img src={fold1}/>
+        <img src={fold1} className='fold'/>
     </Topcont>
   )
 }
@@ -13,5 +13,11 @@ function Top() {
 export default Top
 
 const Topcont = styled.div`
+width: 100%;
+height: 25%;
+background: purple;
 
+.fold{
+    width: 100%; height: 25%;   
+}
 `
