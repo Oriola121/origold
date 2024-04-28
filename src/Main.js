@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import Top from './Top'
 
 export default function Main() {
   return (
     <Maincont>
-        <p>turning ideas into<br/>real life products<br/> is my callings</p>
+        <Top/>
     </Maincont>
   )
 }
