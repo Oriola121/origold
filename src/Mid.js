@@ -6,7 +6,7 @@ function Mid() {
     <Midcont>
         <p className='intro'>
             <span>turning ideas into</span><br/><span>real life </span> 
-            <span className='prograd'>products</span><br/> <span>is my callings</span></p>
+            <span className='prograd'>products</span><br/> <span>is my calling</span></p>
     </Midcont>
   )
 }
@@ -14,7 +14,7 @@ function Mid() {
 export default Mid
  const Midcont = styled.div`
 width: 100%;
-height: 55%;
+height: 50%;
 display: flex;
 justify-content: center;
 align-items: center;
