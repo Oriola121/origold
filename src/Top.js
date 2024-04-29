@@ -46,6 +46,20 @@ display: flex;
 }
 .ori{
    padding: 50px;
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+   letter-spacing: .15em; /* Adjust as needed */
+   animation: 
+     typing 3.5s steps(40, end),
+     blink-caret .75s step-end infinite;
+ }
+ 
+ /* The typing effect */
+ @keyframes typing {
+   from { width: 0 }
+   to { width: 35% }
+ }
 }
 .men{
     display: flex;
