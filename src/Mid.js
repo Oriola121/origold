@@ -23,21 +23,21 @@ align-items: center;
     font-family: Mark Pro;
     font-size: 83.52px;
     font-weight: 750;
+    gradient-color: #A586ED #A388ED #56869D;
 }
 
 .prograd{
-    background: linear-gradient(to right, #A586ED 20%, #A586ED 30%, #A388ED 70%, #56869D 80%);
+    background: linear-gradient(to right, #A586ED 20%, red 30%, #A388ED 70%, lightblue 80%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
     background-size: 200% auto;
-    animation: textShine 7s ease-in-out infinite alternate;
-}
+    animation: textShine 7s ease-in-out infinite;
 
-@keyframes prograd {
-    to {
+
+@keyframes textShine {
+to {
     background-position: 200%;
-}
 }
  `

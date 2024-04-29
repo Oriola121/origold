@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import Top from './Top'
 import Mid from './Mid'
+import End from './End'
 
 export default function Main() {
   return (
     <Maincont>
-        {/* <Mainwrap> */}
             <Top/>
             <Mid/>
-        {/* </Mainwrap> */}
+            <End/>
     </Maincont>
   )
 }
@@ -23,8 +23,3 @@ background: #0E0E0E;
 // justify-content: center;
 color: #fff;
 `
-// const Mainwrap = styled.div`
-// width: 95%;
-// height: 90%;
-// background: #10101A;
-// `
