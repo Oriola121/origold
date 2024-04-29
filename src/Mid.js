@@ -4,12 +4,40 @@ import styled from 'styled-components'
 function Mid() {
   return (
     <Midcont>
-        <p>turning ideas into<br/>real life products<br/> is my callings</p>
+        <p className='intro'>
+            <span>turning ideas into</span><br/><span>real life </span> 
+            <span className='prograd'>products</span><br/> <span>is my callings</span></p>
     </Midcont>
   )
 }
 
 export default Mid
  const Midcont = styled.div`
- 
+width: 100%;
+height: 55%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+.intro{
+    font-family: Mark Pro;
+    font-size: 83.52px;
+    font-weight: 750;
+}
+
+.prograd{
+    background: linear-gradient(to right, #A586ED 20%, #A586ED 30%, #A388ED 70%, #56869D 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 200% auto;
+    animation: textShine 7s ease-in-out infinite alternate;
+}
+
+@keyframes prograd {
+    to {
+    background-position: 200%;
+}
+}
  `
