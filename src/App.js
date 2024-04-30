@@ -3,13 +3,17 @@ import Main from './Main'
 import GlobalStyle from './GlobalStyle'
 import About from './About'
 import styled from 'styled-components'
+import Contact from './Contact'
+// import Load from './Load'
 
 function App() {
   return (
     <Appcont>
       <GlobalStyle/>
+      {/* <Load/> */}
       <Main/>
       <About/>
+      <Contact/>
     </Appcont>
   )
 }

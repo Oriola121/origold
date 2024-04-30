@@ -54,7 +54,7 @@ display: flex;
   font-size: 12px;
   background: #595A5E;
   opacity: 0.6;
-  z-index: 2;
+  z-index: 1;
 @media screen and (max-width: 890px){
   height: 35%;
   width: 70%;

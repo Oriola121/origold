@@ -7,7 +7,7 @@ export default function About() {
     <Abcont id='about'>
       <Aboutwrap>
       <img src={OG} className='og'/>
-      <p className='bout'>Hello stranger! 👋, I'm Abdurrahman and I'm on a mission to transform digital products, 
+      <p className='bout'>Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform digital products, 
       <br/>from daily struggles to delightful experiences! (I'm a frontend developer, by the way).</p>
       </Aboutwrap>
     </Abcont>
@@ -48,9 +48,6 @@ gap: 1rem;
   height: 100px;
   border-radius: 30%;
   border: 2px solid #A586ED;
-
-  // height: 50px;
-  // margin-left: 1rem;
 }
 
 .bout{
