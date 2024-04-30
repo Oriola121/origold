@@ -42,7 +42,7 @@ justify-content: space-between;
 .vp:after {
     content: ''; /* Add content after the element */
     position: absolute; /* Position absolute for pseudo-element */
-    width: 100%; /* Full width */
+    width: 9.5%; /* Full width */
     transform: scaleX(0); /* Initial scale of 0 for underline effect */
     height: 1px; /* Height of the underline */
     bottom: 0; /* Align to bottom */

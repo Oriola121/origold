@@ -6,7 +6,7 @@ function Mid() {
     <Midcont>
         <p className='intro'>
             <span>turning ideas into</span><br/><span>real life </span> 
-            <span className='prograd'>products</span><br/> <span>is my calling</span></p>
+            <span className='prograd'>products</span><br/> <span>is what I do</span></p>
     </Midcont>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import fold1 from './image/fold1.png'
-import OG from './image/ori.jpg'
+import OG from './image/ori.png'
 import styled from 'styled-components'
 import { BsCaretDownFill } from 'react-icons/bs'
 // import Drop from './Drop'
@@ -34,9 +34,10 @@ display: flex;
   height: 50px;
   border-radius: 30%;
   margin-left: 2rem;
-@media screen and (max-width: 890px){}
+@media screen and (max-width: 890px){
   height: 50px;
-  margin-left: 1rem;
+  margin-left: 0.6rem;
+}
 }
 .boxtent{
   height: 35%;
@@ -58,7 +59,7 @@ display: flex;
   height: 35%;
   width: 70%;
   margin-left: 2rem;
-  font-size: 7.5px;
+  font-size: 12px;
 }
 
 }
@@ -92,7 +93,7 @@ display: flex;
  /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 40% }
+  to { width: 52% }
  }
 }
 }
@@ -105,13 +106,10 @@ display: flex;
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 30px;
+  padding: 25px;
 }
 }
 .ardan{
-  font-size: 20px;
-@media screen and (max-width: 890px){
-  font-size: 11px;
-}    
+  font-size: 20px;   
 }
 `
