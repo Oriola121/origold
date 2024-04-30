@@ -1,5 +1,5 @@
 import React from 'react'
-import fold1 from './image/fold1.png'
+import fold1 from './image/fold1.webp'
 import OG from './image/ori.png'
 import styled from 'styled-components'
 import { BsCaretDownFill } from 'react-icons/bs'

@@ -1,5 +1,5 @@
 import React from 'react'
-import fold1 from './image/fold2.png'
+import fold1 from './image/fold2.webp'
 import styled from 'styled-components'
 import Soc from './Soc'
 import { IoMdDownload } from 'react-icons/io'
@@ -27,7 +27,7 @@ display: flex;
 justify-content: space-between;
 
  .fold{
-    height: 160px;   
+    height: 200px;   
 }
 
 .vp{

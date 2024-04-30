@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 function Load() {
   return (
-    <Loadcont className='.loader'>
+    <Loadcont className='preloader'>
         <span><p>HTML</p>
         <p>CSS</p>
         <p>REACT JS</p></span>
@@ -23,38 +23,72 @@ flex-direction: column;
 align-items: center;
 color: #fff;
 
-.loader{
-    border: 0 solid transparent;
-    border-radius: 50%;
-    position: fixed;
-    top: calc(50vh-75px);
-    left: calc(50vw-75px);
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  background-color: #10101a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 129993994;
+  display: grid;
+  place-content: center
 }
-.loader:before, .loader:after{
-    content: '';
-    border: 1em solid #ff5733;
-    border-radius: 50%;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: loader 2s linear infinite;
-    opacity: 0;
+
+.preloader__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
-.loader:before{
-    animation-delay: .5s;
+
+.preloader__left {
+  margin-right: 1rem
 }
-@keyframes loader {
-    0% {
-      transform: scale(0);
-      opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0;
+
+.preloader__right {
+  margin-left: 1rem;
+  width: max-content;
+  height: 4rem;
+  overflow: hidden;
+  position: relative
+}
+
+.preloader__right:before {
+  background-image: linear-gradient(180deg,#10101a 5%,rgba(16,16,26,0) 30%)
+}
+
+.preloader__right:after,.preloader__right:before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1
+}
+
+.preloader__right:after {
+  background-image: linear-gradient(0deg,#10101a 5%,rgba(16,16,26,0) 30%)
+}
+
+.preloader__text {
+  font-family: D-DIN Condensed,sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 210%;
+  letter-spacing: .19em;
+  color: var(--color-white);
+  animation: preloaderTextAnim 12s linear;
+  animation-delay: 3s
+}
+@keyframes preloaderTextAnim {
+  0% {
+      transform: translateY(0)
+  }
+
+  50%,to {
+      transform: translateY(-600%)
+  }
 }
 `
