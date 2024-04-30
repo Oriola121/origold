@@ -7,7 +7,7 @@ export default function About() {
     <Abcont id='about'>
       <Aboutwrap>
       <img src={OG} className='og'/>
-      <p>Hi there! You've got an idea and you want to make it real?</p>
+      <p className='bout'>Hi there! You've got an idea and you want to make it real?</p>
       </Aboutwrap>
     </Abcont>
   )
