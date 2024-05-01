@@ -28,7 +28,7 @@ flex-wrap: wrap;
   font-weight: 750;
   gradient-color: #A586ED #A388ED #56869D;
 @media screen and (max-width: 890px){
-  font-size: 60px;
+  font-size: 58px;
   font-weight: 750;
   
 }
