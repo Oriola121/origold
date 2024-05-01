@@ -40,7 +40,6 @@ height: 90%;
 display: flex;
 flex-direction: column;
 justify-content: center;
-background: red;
 @media screen and (max-width: 890px){
   width: 98%;
   height: 90%;

@@ -73,14 +73,13 @@ justify-content: space-between;
     gap: 2rem;
 @media screen and (max-width: 1075px){
     width: 80%;
-    // height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     color: #fff;
     gap: 2rem;
-    // margin-top: 2rem;
-    // margin-left: 0.7rem;
+    margin-top: 2rem;
+    margin-left: -1rem;
 }
 }
 

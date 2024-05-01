@@ -26,7 +26,7 @@ export default Rite3
 
 const R3cont = styled.div`
 width: 100%;
-height: 40%;
+height: 30%;
 display: flex;
 align-items: center;
 `
@@ -38,7 +38,7 @@ align-items: center;
 gap: 10px;
 font-family: D-DIN Condensed;
 @media screen and (max-width: 890px){
-  width: 40%;
+  width: 50%;
   display: flex;
   align-items: center;
 }
@@ -50,7 +50,6 @@ span{
   justify-content: space-between;
   align-items: center;
   margin-top: -1rem;
-
 a{
   color: inherit;
 
