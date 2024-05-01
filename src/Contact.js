@@ -33,22 +33,14 @@ background: #0E0E0E;
 display: flex;
 align-items: center;
 justify-content: center;
-// @media screen and (max-width: 890px){
-//   width: 100%;
-//   height: 20%;
-//   background: #0E0E0E;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-}
 `
 const Conwrap = styled.div`
-width: 52%;
+width: 45%;
 height: 90%;
 display: flex;
 flex-direction: column;
-// align-items: center;
 justify-content: center;
+background: red;
 @media screen and (max-width: 890px){
   width: 98%;
   height: 90%;

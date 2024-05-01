@@ -8,11 +8,12 @@ import CV from './image/Ori Gold resume.pdf'
 function End() {
   return (
     <Endcont>
-        <div className='ook'><p className='vp'>VIEW PROJECTS</p>
+        <div className='org2'>
+        <div className='orga'><p className='vp'>VIEW PROJECTS</p>
         <a href= {CV} className='clink' download='Ori Gold Resume'>
         <p>DOWNLOAD CV</p><IoMdDownload/></a>
         <Soc/>
-        </div>
+        </div></div>
         <img src={fold1} className='fold'/>
     </Endcont>
   )
@@ -26,14 +27,20 @@ height: 25%;
 display: flex;
 justify-content: space-between;
 
- .fold{
-    height: 200px;   
-}
 
+ .fold{
+    height: 200px;
+}
+.org2{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .vp{
-    height: 10%;
+    // height: 10%;
     font-family: D-DIN Condensed;
-    Font size: 16.704px;
+    font-size: 20px;
     display: inline-block; /* Display inline block */
     position: relative; /* Set position relative */
     color: #fff;
@@ -57,12 +64,12 @@ justify-content: space-between;
     transform-origin: bottom left; /* Set transform origin */
 }
 
-.ook{
-    width: 80%;
+.orga{
+    width: 40%;
+    height: 90%;
     display: flex;
     flex-direction: column;
-    margin-left: 21rem;
-    margin-top: 2rem;
+    justify-content: center;
     gap: 2rem;
 @media screen and (max-width: 1075px){
     width: 80%;
@@ -72,8 +79,8 @@ justify-content: space-between;
     flex-wrap: wrap;
     color: #fff;
     gap: 2rem;
-    margin-top: 2rem;
-    margin-left: 0.7rem;
+    // margin-top: 2rem;
+    // margin-left: 0.7rem;
 }
 }
 
@@ -83,7 +90,7 @@ justify-content: space-between;
     align-items: center;
     gap: 3px;
     font-family: D-DIN Condensed;
-    Font size: 16.704px;
+    font-size: 20px;
 }
   
 a:{
