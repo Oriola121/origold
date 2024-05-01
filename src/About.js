@@ -16,14 +16,14 @@ export default function About() {
 
 const Abcont = styled.div`
 width: 100%;
-height: 20%;
+height: 30%;
 background: #0E0E0E;
 display: flex;
 align-items: center;
 justify-content: center;
 @media screen and (max-width: 890px){
   width: 100%;
-  height: 20%;
+  height: 30%;
   background: #0E0E0E;
   display: flex;
   align-items: center;
@@ -35,8 +35,10 @@ width: 70%;
 height: 70%;
 display: flex;
 align-items: center;
+justify-content: center;
 color: #fff;
-margin-left: 15rem;
+margin-top: 4rem;
+margin-left: 3rem;
 gap: 1rem;
 @media screen and (max-width: 890px){
   margin-left: 0;

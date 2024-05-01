@@ -4,15 +4,15 @@ import GlobalStyle from './GlobalStyle'
 import About from './About'
 import styled from 'styled-components'
 import Contact from './Contact'
-// import Load from './Load'
+import Project from './Project'
 
 function App() {
   return (
     <Appcont>
       <GlobalStyle/>
-      {/* <Load/> */}
       <Main/>
       <About/>
+      <Project/>
       <Contact/>
     </Appcont>
   )

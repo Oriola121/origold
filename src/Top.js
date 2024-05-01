@@ -4,7 +4,6 @@ import OG from './image/am.png'
 // import OG from './image/ori.png'
 import styled from 'styled-components'
 import { BsCaretDownFill } from 'react-icons/bs'
-// import Drop from './Drop'
 
 function Top() {
   return (
@@ -13,9 +12,13 @@ function Top() {
         <div className='boxtent'>
             <img src={OG} className='og'/>
             <p className='ori'>MUHIBUDEEN ABDURRAHMAN ORIOLA</p>
-            <p className='men'>MENU <BsCaretDownFill className='ardan'/>
-            {/* <Drop/> */}
-            </p>
+            <div className='dropper'>
+              <p className='dropbtn'>MENU <BsCaretDownFill className='ardan'/></p>
+              <div class="dropcon">
+                <a href='#' style={{ color: "white", textDecoration: "none" }}>Home</a>
+                <a href='#about' style={{ color: "white", textDecoration: "none" }}>About</a>
+              </div>
+            </div>
         </div>
     </Topcont>
   )
@@ -54,8 +57,9 @@ display: flex;
   font-weight: 700;
   font-size: 12px;
   background: #595A5E;
-  opacity: 0.6;
-  z-index: 1;
+  opacity: 80%;
+  z-index: 999;
+  position: sticky;
 @media screen and (max-width: 890px){
   height: 35%;
   width: 70%;
@@ -65,7 +69,7 @@ display: flex;
 
 }
 .ori{
-  padding: 50px;
+  padding: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
@@ -78,10 +82,10 @@ display: flex;
  /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 35% }
+  to { width:41.5% }
  }
 @media screen and (max-width: 890px){
-  padding: 30px;
+  padding: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
@@ -94,23 +98,66 @@ display: flex;
  /* The typing effect */
 @keyframes typing {
   from { width: 0 }
-  to { width: 52% }
+  to { width: 50.5% }
  }
 }
 }
-.men{
-  display: flex;
-  align-items: center;
+.dropper{
   gap: 5px;
-  padding: 50px;
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  margin-right: 3rem;
 @media screen and (max-width: 890px){
+  gap: 5px;
+  padding: 0px;
+  position: relative;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+}
+.dropbtn {
+  color: white;
+  padding: 10px;
+  font-size: 12px;
+  border: none;
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 25px;
-}
 }
 .ardan{
   font-size: 20px;   
 }
+/* Dropdown Content (Hidden by Default) */
+.dropcon {
+  display: none;
+  position: absolute;
+  // background-color: #f1f1f1;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropcon a {
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropcon a:hover {
+  background-color: #A586ED;
+}
+
+/* Show the dropdown menu on hover */
+.dropper:hover .dropcon {
+  display: block;
+}
+
+// /* Change the background color of the dropdown button when the dropdown content is shown */
+// .dropper:hover .dropbtn {
+//   background-color: red;
+//   // #3e8e41;
+// }
 `
