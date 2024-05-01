@@ -9,6 +9,7 @@ function Top() {
   return (
     <Topcont>
         <img src={fold1} className='fold'/>
+        <div className='org'>
         <div className='boxtent'>
             <img src={OG} className='og'/>
             <p className='ori'>MUHIBUDEEN ABDURRAHMAN ORIOLA</p>
@@ -19,7 +20,7 @@ function Top() {
                 <a href='#about' style={{ color: "white", textDecoration: "none" }}>About</a>
               </div>
             </div>
-        </div>
+        </div></div>
     </Topcont>
   )
 }
@@ -30,9 +31,11 @@ const Topcont = styled.div`
 width: 100%;
 height: 25%;
 display: flex;
+justify-content: space-between;
 
 .fold{
-    height: 200px;   
+  // width: 7%;
+  height: 200px;
 }
 .og{
   height: 50px;
@@ -43,27 +46,34 @@ display: flex;
   margin-left: 0.6rem;
 }
 }
+.org{
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: fixed;
+}
 .boxtent{
-  height: 35%;
+  height: 45%;
   width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 2px solid grey;
   border-radius: 15px;
-  margin-left: 15rem;
-  margin-top: 1.8rem;
+  // margin-top: 1.8rem;
   font-family: Circular Std Book;
   font-weight: 700;
   font-size: 12px;
   background: #595A5E;
   opacity: 80%;
-  z-index: 999;
-  position: sticky;
+ 
 @media screen and (max-width: 890px){
   height: 35%;
-  width: 70%;
-  margin-left: 2rem;
+  width: 80%;
+  margin-left: 3.5rem;
   font-size: 12px;
 }
 

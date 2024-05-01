@@ -24,4 +24,7 @@ const Appcont = styled.div`
 width: 100%;
 height: 100vh;
 background: #0E0E0E;
+
+
+// https://newport-six.vercel.app/
 `
