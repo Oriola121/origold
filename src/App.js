@@ -4,7 +4,7 @@ import GlobalStyle from './GlobalStyle'
 import About from './About'
 import styled from 'styled-components'
 import Contact from './Contact'
-import Project from './Project'
+// import Project from './Project'
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <GlobalStyle/>
       <Main/>
       <About/>
-      <Project/>
+      {/* <Project/> */}
       <Contact/>
     </Appcont>
   )
