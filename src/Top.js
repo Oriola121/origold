@@ -6,6 +6,15 @@ import styled from 'styled-components'
 import { BsCaretDownFill } from 'react-icons/bs'
 
 function Top() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
   return (
     <Topcont>
         <img src={fold1} className='fold'/>
