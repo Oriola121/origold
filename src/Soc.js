@@ -26,7 +26,7 @@ export default Rite3
 
 const R3cont = styled.div`
 width: 100%;
-height: 30%;
+height: 20%;
 display: flex;
 align-items: center;
 `
@@ -35,7 +35,7 @@ width: 30%;
 height: 100%;
 display: flex;
 align-items: center;
-gap: 10px;
+gap: 20px;
 font-family: D-DIN Condensed;
 @media screen and (max-width: 890px){
   width: 50%;
