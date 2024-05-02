@@ -35,7 +35,7 @@ align-items: center;
 justify-content: center;
 `
 const Conwrap = styled.div`
-width: 45%;
+width: 52%;
 height: 90%;
 display: flex;
 flex-direction: column;

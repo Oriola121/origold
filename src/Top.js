@@ -82,7 +82,7 @@ justify-content: space-between;
 @media screen and (max-width: 890px){
   height: 35%;
   width: 80%;
-  margin-left: 3rem;
+  margin-left: 0.5rem;
   font-size: 12px;
 }
 

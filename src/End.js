@@ -27,12 +27,11 @@ height: 25%;
 display: flex;
 justify-content: space-between;
 
-
  .fold{
     height: 200px;
 }
 .org2{
-    width: 90%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +48,7 @@ justify-content: space-between;
 .vp:after {
     content: ''; /* Add content after the element */
     position: absolute; /* Position absolute for pseudo-element */
-    width: 9.5%; /* Full width */
+    width: 23.5%; /* Full width */
     transform: scaleX(0); /* Initial scale of 0 for underline effect */
     height: 1px; /* Height of the underline */
     bottom: 0; /* Align to bottom */
