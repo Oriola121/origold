@@ -3,14 +3,14 @@ import fold1 from './image/fold2.webp'
 import styled from 'styled-components'
 import Soc from './Soc'
 import { IoMdDownload } from 'react-icons/io'
-import CV from './image/Ori Gold resume.pdf'
+import CV from './image/Muhibudeen AbdurRahman Resume.pdf'
 
 function End() {
   return (
     <Endcont>
         <div className='org2'>
         <div className='orga'><p className='vp'>VIEW PROJECTS</p>
-        <a href= {CV} className='clink' download='Ori Gold Resume'>
+        <a href= {CV} className='clink' download='Muhibudeen AbdurRahman Resume'>
         <p>DOWNLOAD CV</p><IoMdDownload/></a>
         <Soc/>
         </div></div>
