@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import OG from './image/ori.png'            
+import OG from '../image/ori.png'            
 
 export default function About() {
   return (

@@ -1,30 +1,27 @@
-import React from 'react'
-import Main from './Main'
-import GlobalStyle from './GlobalStyle'
-import About from './About'
-import styled from 'styled-components'
-import Contact from './Contact'
-// import Project from './Project'
+import React from "react";
+import Main from "./Main";
+import GlobalStyle from "./GlobalStyle";
+import About from "./content/About";
+import styled from "styled-components";
+import Contact from "./content/Contact";
+// import Project from './content/Project'
 
 function App() {
   return (
     <Appcont>
-      <GlobalStyle/>
-      <Main/>
-      <About/>
+      <GlobalStyle />
+      <Main />
+      <About />
       {/* <Project/> */}
-      <Contact/>
+      <Contact />
     </Appcont>
-  )
+  );
 }
 
-export default App
+export default App;
 
 const Appcont = styled.div`
-width: 100%;
-height: 100vh;
-background: #0E0E0E;
-
-
-// https://newport-six.vercel.app/
-`
+  width: 100%;
+  height: 100vh;
+  background: #0e0e0e;
+`;

@@ -1,9 +1,9 @@
 import React from 'react'
-import fold1 from './image/fold2.webp'
+import fold1 from '../image/fold2.webp'
 import styled from 'styled-components'
 import Soc from './Soc'
 import { IoMdDownload } from 'react-icons/io'
-import CV from './image/Muhibudeen AbdurRahman Resume.pdf'
+import CV from '../image/Muhibudeen AbdurRahman Resume.pdf'
 
 function End() {
   return (
@@ -14,7 +14,7 @@ function End() {
         <p>DOWNLOAD CV</p><IoMdDownload/></a>
         <Soc/>
         </div></div>
-        <img src={fold1} className='fold'/>
+        <img src={fold1}  alt='fold' className='fold'/>
     </Endcont>
   )
 }
