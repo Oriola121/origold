@@ -1,12 +1,11 @@
 import React from 'react'
 import fold1 from '../image/fold1.webp'
 import OG from '../image/am.png'
-// import OG from './image/ori.png'
 import styled from 'styled-components'
 import { BsCaretDownFill } from 'react-icons/bs'
 
 function Top() {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  document.querySelectorAll('a[href^="/"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -25,8 +24,8 @@ function Top() {
             <div className='dropper'>
               <p className='dropbtn'>MENU <BsCaretDownFill className='ardan'/></p>
               <div class="dropcon">
-                <a href='#' style={{ color: "white", textDecoration: "none" }}>Home</a>
-                <a href='#about' style={{ color: "white", textDecoration: "none" }}>About</a>
+                <a href='/' style={{ color: "white", textDecoration: "none" }}>Home</a>
+                <a href='/about' style={{ color: "white", textDecoration: "none" }}>About</a>
               </div>
             </div>
         </div></div>

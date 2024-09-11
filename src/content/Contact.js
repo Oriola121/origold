@@ -10,16 +10,16 @@ export default function Contact() {
         <p className='con'>Connect with me online</p>
         <div className='soctot'>
           <span className='soc'>
-            <a href='https://www.linkedin.com/in/abdurrahman-muhibudeen-9a0328226/' target='_blank' className='consoc'>
+            <a href='https://www.linkedin.com/in/abdurrahman-muhibudeen/' target='_blank' className='consoc' rel="noreferrer">
             <FaLinkedin /><p>Linkedin</p></a>
-            <a href='https://github.com/Oriola121' target='_blank' className='consoc'>
+            <a href='https://github.com/Oriola121' target='_blank' className='consoc' rel="noreferrer">
             <FaGithub/><p>Github</p></a>
             <a href="https://wa.me/2348102557217"  rel="noopener noreferrer" target='_blank' className='consoc'>
             <FaWhatsapp /><p>Whatsapp</p></a></span>
           <span className='soc2'>
-            <a href='https://twitter.com/Realtor_OriGold' target='_blank' className='consoc'>
+            <a href='https://twitter.com/Realtor_OriGold' target='_blank' className='consoc' rel="noreferrer">
             <FaTwitter/><p>Twitter</p></a>
-            <a href='https://web.facebook.com/OrigoldMuhibudeen' target='_blank' className='consoc'>
+            <a href='https://web.facebook.com/OrigoldMuhibudeen' target='_blank' className='consoc' rel="noreferrer">
             <FaFacebook/><p>Facebook</p></a></span></div>
       </Conwrap>
     </Concont>

@@ -37,7 +37,6 @@ justify-content: space-between;
     align-items: center;
 }
 .vp{
-    // height: 10%;
     font-family: D-DIN Condensed;
     font-size: 20px;
     display: inline-block; /* Display inline block */

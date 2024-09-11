@@ -7,13 +7,13 @@ function Rite3() {
     <R3cont>
         <R3wrap>
           <span>
-          <a href='https://www.linkedin.com/in/abdurrahman-muhibudeen-9a0328226/' target='_blank' >
+          <a href='https://www.linkedin.com/in/abdurrahman-muhibudeen/' target='_blank' rel="noreferrer" >
             <FaLinkedin /></a>
-          <a href='https://web.facebook.com/OrigoldMuhibudeen' target='_blank' >
+          <a href='https://web.facebook.com/OrigoldMuhibudeen' target='_blank' rel="noreferrer" >
             <FaFacebook/></a>
-          <a href='https://twitter.com/Realtor_OriGold' target='_blank' >
+          <a href='https://twitter.com/Realtor_OriGold' target='_blank' rel="noreferrer" >
             <FaTwitter/></a>
-          <a href='https://github.com/Oriola121' target='_blank' >
+          <a href='https://github.com/Oriola121' target='_blank' rel="noreferrer" >
             <FaGithub/></a>
           <a href="https://wa.me/2348102557217"  rel="noopener noreferrer" target='_blank' >
             <FaWhatsapp /></a></span>
