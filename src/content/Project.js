@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import pro1 from '../image/LSETF1.png'
+import pro1 from '../assest/LSETF1.png'
 
 export default function Project() {
   return (

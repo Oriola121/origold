@@ -1,20 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
-import OG from '../image/ori.jpg'            
+import profileImg from '../assets/ori.jpg'            
 
 export default function About() {
   return (
-    <Abcont id='about'>
-      <Aboutwrap>
-      <img src={OG} alt='Origold' className='og'/>
-      <p className='bout'>Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform digital products, 
+    <AboutContainer id='about'>
+      <AboutWrapper>
+      <img src={profileImg} alt='Origold' className='profile-img'/>
+      <p className='about-me'>Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform digital products, 
       <br/>from daily struggles to delightful experiences! (I'm a frontend developer, by the way).</p>
-      </Aboutwrap>
-    </Abcont>
+      </AboutWrapper>
+    </AboutContainer>
   )
 }
 
-const Abcont = styled.div`
+const AboutContainer = styled.div`
 width: 100%;
 height: 30%;
 background: #0E0E0E;
@@ -30,7 +30,7 @@ justify-content: center;
   justify-content: center;
 }
 `
-const Aboutwrap = styled.div`
+const AboutWrapper = styled.div`
 width: 70%;
 height: 70%;
 display: flex;
@@ -46,13 +46,13 @@ gap: 1rem;
   height: 80%;
 }
 
-.og{
+.profile-img{
   height: 100px;
   border-radius: 30%;
   border: 2px solid #A586ED;
 }
 
-.bout{
+.about-me{
   font-family: Circular Std Book;
   font-size: 15.776px;
   color: rgb(196, 196, 196);

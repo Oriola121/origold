@@ -1,19 +1,19 @@
 import styled from "styled-components";
-import Top from "./content/Top";
-import Mid from "./content/Mid";
-import End from "./content/End";
+import Head from "./content/Head";
+import Hero from "./content/Hero";
+import FootLayer from "./content/FootLayer";
 
 export default function Main() {
   return (
-    <Maincont id="home">
-      <Top />
-      <Mid />
-      <End />
-    </Maincont>
+    <MainContainer id="home">
+      <Head />
+      <Hero />
+      <FootLayer />
+    </MainContainer>
   );
 }
 
-const Maincont = styled.div`
+const MainContainer = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
