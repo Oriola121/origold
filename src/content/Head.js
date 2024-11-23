@@ -72,14 +72,13 @@ export default function Head() {
 
 const HeadContainer = styled.div`
   width: 100%;
-  height: 25%;
+  height: 20%;
   display: flex;
   justify-content: space-between;
 
   .fold {
     height: 200px;
     position: fixed;
-
   }
 
   .profile-img {

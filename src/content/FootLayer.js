@@ -9,7 +9,7 @@ export default function FootLayer() {
   return (
     <FootContainer>
       <div className="footer-area">
-        <div className="project-button">
+        <div className="footer-contents">
           <p className="view-project">VIEW PROJECTS</p>
           <a
             href={CV}
@@ -29,7 +29,7 @@ export default function FootLayer() {
 
 const FootContainer = styled.div`
   width: 100%;
-  height: 25%;
+  height: 30%;
   display: flex;
   justify-content: space-between;
 
@@ -37,8 +37,10 @@ const FootContainer = styled.div`
     height: 200px;
     position: fixed;
     right: 0;
+    margin-top: 2rem;
   }
   .footer-area {
+    height: 100%;
     width: 90%;
     display: flex;
     justify-content: center;
@@ -70,7 +72,7 @@ const FootContainer = styled.div`
     transform-origin: bottom left; /* Set transform origin */
   }
 
-  .project-button {
+  .footer-contents {
     width: 40%;
     height: 90%;
     display: flex;
@@ -80,18 +82,16 @@ const FootContainer = styled.div`
     @media screen and (max-width: 1075px) {
       width: 80%;
       display: flex;
-      flex-direction: column;
       flex-wrap: wrap;
       color: #fff;
       gap: 2rem;
-      margin-top: 2rem;
+      margin-top: 1rem;
       margin-left: -1rem;
     }
   }
 
   .resume-download {
     display: flex;
-    // justify-content: center;
     align-items: center;
     gap: 3px;
     font-family: D-DIN Condensed;

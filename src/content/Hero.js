@@ -22,8 +22,6 @@ display: flex;
 justify-content: center;
 flex-wrap: wrap;
 
-
-
 .display-text{
   font-family: Mark Pro;
   font-size: 83.52px;
