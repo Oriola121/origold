@@ -4,25 +4,24 @@ import styled from "styled-components";
 import Socials from "./Socials";
 import { IoMdDownload } from "react-icons/io";
 import CV from "../assets/Muhibudeen AbdurRahman Resume.pdf";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function FootLayer() {
   return (
     <FootContainer>
       <div className="footer-area">
         <div className="footer-contents">
-          <p className="view-project">VIEW PROJECTS</p>
-          <a
-            href={CV}
-            className="resume-download"
-            download="Muhibudeen AbdurRahman Resume"
-          >
-            <span>DOWNLOAD CV</span>
+          <AnimatedScrollLink to="projects" smooth={true}>
+            VIEW PROJECTS
+          </AnimatedScrollLink>
+          <DownloadLink href={CV} download>
+            DOWNLOAD CV
             <IoMdDownload />
-          </a>
+          </DownloadLink>
           <Socials />
         </div>
       </div>
-      <img src={fold1} alt="fold" className="fold" />
+      <img src={fold1} alt="" className="fold" />
     </FootContainer>
   );
 }
@@ -39,37 +38,17 @@ const FootContainer = styled.div`
     right: 0;
     margin-top: 2rem;
   }
+
   .footer-area {
     height: 100%;
     width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .view-project {
-    font-family: D-DIN Condensed;
-    font-size: 20px;
-    display: inline-block; /* Display inline block */
-    position: relative; /* Set position relative */
-    color: #fff;
-  }
 
-  .view-project:after {
-    content: ""; /* Add content after the element */
-    position: absolute; /* Position absolute for pseudo-element */
-    width: 23.5%; /* Full width */
-    transform: scaleX(0); /* Initial scale of 0 for underline effect */
-    height: 1px; /* Height of the underline */
-    bottom: 0; /* Align to bottom */
-    left: 0; /* Align to left */
-    background-color: #fff; /* Background color of the underline */
-    transform-origin: bottom right; /* Set transform origin */
-    transition: transform 0.25s ease-out; /* Transition effect for the underline */
-  }
-
-  .view-project:hover:after {
-    transform: scaleX(1); /* Scale the underline on hover */
-    transform-origin: bottom left; /* Set transform origin */
+    @media screen and (max-width: 890px) {
+      z-index: 1;
+    }
   }
 
   .footer-contents {
@@ -79,6 +58,7 @@ const FootContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 2rem;
+
     @media screen and (max-width: 1075px) {
       width: 80%;
       display: flex;
@@ -89,32 +69,61 @@ const FootContainer = styled.div`
       margin-left: -1rem;
     }
   }
+`;
+const AnimatedScrollLink = styled(ScrollLink)`
+  font-family: D-DIN Condensed;
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
-  .resume-download {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    font-family: D-DIN Condensed;
-    font-size: 20px;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 23.5%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
   }
 
-  a: {
-    color: #fff;
-    text-decoration: none;
+  &:hover {
+   color: #A586ED;
+    
+    &:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+      background: linear-gradient(
+        to right,
+        #A586ED 20%,
+        #FF5555 30%,
+        #A388ED 70%,
+        #5FADE4 80%
+      );
+    }
   }
+`;
 
-  a:link {
-    color: #fff;
-    text-decoration: none;
-  }
+const DownloadLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-family: D-DIN Condensed;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
 
-  a:visited {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #a586ed;
-    text-decoration: none;
+  &:hover {
+   color: #A586ED;
+    
+    svg {
+      fill: #A586ED;
+    }
   }
 `;

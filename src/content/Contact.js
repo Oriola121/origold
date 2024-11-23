@@ -79,6 +79,7 @@ const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
 `;
 const ContactWrapper = styled.div`
 width: 45%;
@@ -90,6 +91,7 @@ justify-content: center;
   height: 90%;
   width: 90%;
   margin-left: 0;
+  z-index: 1;
 }
 .no-stranger{
   font-family: Mark Pro;

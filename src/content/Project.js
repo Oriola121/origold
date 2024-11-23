@@ -36,6 +36,7 @@ const ProjectWrapper = styled.div`
   @media screen and (max-width: 890px){
   // height: 90%;
   width: 90%;
+  z-index: 1;
 }
   .pro1 {
     width: 70%;

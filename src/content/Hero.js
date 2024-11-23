@@ -32,6 +32,7 @@ flex-wrap: wrap;
   margin-left: 0;
   font-size: 58px;
   font-weight: 750;
+  z-index: 1;
   
 }
 

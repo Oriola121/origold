@@ -43,6 +43,7 @@ line-height: 1.3rem;
 @media screen and (max-width: 890px){
   width: 90%;
   height: 90%;
+  z-index: 1;
 }
 
 .profile-img{
