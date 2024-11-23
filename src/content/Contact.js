@@ -1,39 +1,85 @@
-import React from 'react'
-import styled from 'styled-components'
-import { FaGithub,FaTwitter,FaLinkedin,FaWhatsapp,FaFacebook } from 'react-icons/fa'
+import React from "react";
+import styled from "styled-components";
+import {
+  FaGithub,
+  FaTwitter,
+  FaLinkedin,
+  FaWhatsapp,
+  FaFacebook,
+} from "react-icons/fa";
 
 export default function Contact() {
   return (
     <ContactContainer>
       <ContactWrapper>
-        <p className='no-stranger'><span className='colorful-stranger'>Dont be a stranger!</span>👋</p>
-        <p className='connect-note'>Connect with me online</p>
-        <div className='socials-area'>
-          <span className='social-1'>
-            <a href='https://www.linkedin.com/in/abdurrahman-muhibudeen/' target='_blank' className='social-link' rel="noreferrer">
-            <FaLinkedin /><p>Linkedin</p></a>
-            <a href='https://github.com/Oriola121' target='_blank' className='social-link' rel="noreferrer">
-            <FaGithub/><p>Github</p></a>
-            <a href="https://wa.me/2348102557217"  rel="noopener noreferrer" target='_blank' className='social-link'>
-            <FaWhatsapp /><p>Whatsapp</p></a></span>
-          <span className='socials-2'>
-            <a href='https://twitter.com/Realtor_OriGold' target='_blank' className='social-link' rel="noreferrer">
-            <FaTwitter/><p>Twitter</p></a>
-            <a href='https://web.facebook.com/OrigoldMuhibudeen' target='_blank' className='social-link' rel="noreferrer">
-            <FaFacebook/><p>Facebook</p></a></span></div>
+        <p className="no-stranger">
+          <span className="colorful-stranger">Dont be a stranger!</span>👋
+        </p>
+        <p className="connect-note">Connect with me online</p>
+        <div className="socials-area">
+          <span className="social-1">
+            <a
+              href="https://www.linkedin.com/in/abdurrahman-muhibudeen/"
+              target="_blank"
+              className="social-link"
+              rel="noreferrer"
+            >
+              <FaLinkedin />
+              <p>Linkedin</p>
+            </a>
+            <a
+              href="https://github.com/Oriola121"
+              target="_blank"
+              className="social-link"
+              rel="noreferrer"
+            >
+              <FaGithub />
+              <p>Github</p>
+            </a>
+            <a
+              href="https://wa.me/2348102557217"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="social-link"
+            >
+              <FaWhatsapp />
+              <p>Whatsapp</p>
+            </a>
+          </span>
+          <span className="socials-2">
+            <a
+              href="https://twitter.com/Realtor_OriGold"
+              target="_blank"
+              className="social-link"
+              rel="noreferrer"
+            >
+              <FaTwitter />
+              <p>Twitter</p>
+            </a>
+            <a
+              href="https://web.facebook.com/OrigoldMuhibudeen"
+              target="_blank"
+              className="social-link"
+              rel="noreferrer"
+            >
+              <FaFacebook />
+              <p>Facebook</p>
+            </a>
+          </span>
+        </div>
       </ContactWrapper>
     </ContactContainer>
-  )
+  );
 }
 
 const ContactContainer = styled.div`
-width: 100%;
-height: 50%;
-background: #0E0E0E;
-display: flex;
-align-items: center;
-justify-content: center;
-`
+  width: 100%;
+  height: 50%;
+  background: #0e0e0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 const ContactWrapper = styled.div`
 width: 52%;
 height: 90%;
@@ -45,8 +91,8 @@ justify-content: center;
   height: 90%;
   margin-left: 0.5rem;
 }
-   @media screen and (max-width:410px){
-  padding-left: 20px;
+  @media screen and (min-width: 350px) and (max-width: 410px){
+  padding-left: 10px;
   }
 .no-stranger{
   font-family: Mark Pro;
@@ -114,4 +160,4 @@ a:hover{
   text-decoration: none;
 }
 }
-`
+`;
