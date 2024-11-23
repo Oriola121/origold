@@ -35,6 +35,9 @@ flex-wrap: wrap;
   font-weight: 750;
   
 }
+  @media screen and (max-width:410px){
+  padding-left: 20px;
+  }
 }
 
 .animated-product{

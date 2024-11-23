@@ -45,6 +45,9 @@ justify-content: center;
   height: 90%;
   margin-left: 0.5rem;
 }
+   @media screen and (max-width:410px){
+  padding-left: 20px;
+  }
 .no-stranger{
   font-family: Mark Pro;
   font-size: 46.4px;
