@@ -25,8 +25,9 @@ const Projects = [
     involved creating modular UI components, implementing state management, and integrating 
     essential features to enhance usability for the platform administrators.
 `,
-    videoUrl: myDataVideo, 
-    technology: "JavaScript + Next + Tailwind CSS + Zustand + PostgreSQL + Prisma ",
+    videoUrl: myDataVideo,
+    technology:
+      "JavaScript + Next + Tailwind CSS + Zustand + PostgreSQL + Prisma ",
   },
 ];
 
@@ -73,6 +74,7 @@ export default function Project() {
                         marginTop: "5px",
                         marginBottom: "10px",
                         textAlign: "center",
+                        fontFamily: "D-DIN Condensed",
                       }}
                     >
                       <strong>{project.technology}</strong>
@@ -114,6 +116,7 @@ const Section = styled.section`
   color: #fff;
   display: flex;
   justify-content: center;
+  font-family: Circular Std Book;
 `;
 
 const Container = styled.div`
@@ -198,6 +201,7 @@ const ProjectInfo = styled.div`
 
   h3 {
     text-align: center;
+    font-family: D-DIN Condensed;
   }
 `;
 
