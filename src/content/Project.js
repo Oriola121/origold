@@ -1,16 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import myDataVideo from "../assets/myData.mp4";
 import { motion } from "framer-motion";
+import VideoDisplay from "./VideoDisplay";
 
 const Projects = [
   {
     id: 1,
     name: "myData",
-    description: "A database app using Firebase to perform CRUD operations.",
+    description:
+      "A dynamic database application built with JavaScript, React, and styled-components. This app leverages Firebase to perform CRUD operations, allowing users to create, read, update, and delete data entries in real-time. It features an intuitive interface, responsive design, and seamless interactions, providing users with a smooth experience for managing their data. The application supports secure data storage and retrieval using Firebase's real-time database, with data synchronization across all connected clients. The design is fully responsive, ensuring compatibility across all device sizes.",
     videoUrl: myDataVideo,
     liveLink: "https://lsetf-student-database.web.app/student",
     github: "https://github.com/Oriola121/origold",
+    technology: "JavaScript + React + styled-components + Firebase",
   },
   {
     id: 2,
@@ -20,29 +23,38 @@ const Projects = [
     liveLink: "https://example.com/project2",
     github: "https://github.com/Oriola121/origold",
   },
-  {
-    id: 3,
-    name: "myData",
-    description: "A database app using Firebase to perform CRUD operations.",
-    videoUrl: myDataVideo,
-    liveLink: "https://example.com/project3",
-    github: "https://github.com/Oriola121/origold",
-  },
-  {
-    id: 4,
-    name: "myData",
-    description: "A database app using Firebase to perform CRUD operations.",
-    videoUrl: myDataVideo,
-    liveLink: "https://example.com/project4",
-    github: "https://github.com/Oriola121/origold",
-  },
+  // {
+  //   id: 3,
+  //   name: "Project 3",
+  //   description: "A database app using Firebase to perform CRUD operations.",
+  //   videoUrl: myDataVideo,
+  //   liveLink: "https://example.com/project3",
+  //   github: "https://github.com/Oriola121/origold",
+  // },
+  // {
+  //   id: 4,
+  //   name: "Project 4",
+  //   description: "A database app using Firebase to perform CRUD operations.",
+  //   videoUrl: myDataVideo,
+  //   liveLink: "https://example.com/project4",
+  //   github: "https://github.com/Oriola121/origold",
+  // },
 ];
 
 export default function Project() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleDescription = (id) => {
+    if (expandedIndex === id) {
+      setExpandedIndex(null);
+    } else {
+      setExpandedIndex(id);
+    }
+  };
+
   return (
     <Section id="projects">
       <Container>
-        <h2>Projects</h2>
         <ProjectsGrid>
           {Projects.map((project) => (
             <motion.div
@@ -52,32 +64,48 @@ export default function Project() {
               transition={{ duration: 0.6 }}
             >
               <ProjectCard>
-                <VideoWrapper>
-                  <video controls>
-                    <source src={project.videoUrl} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </VideoWrapper>
-                <ProjectInfo>
-                  <h3>{project.name}</h3>
-                  <p>{project.description}</p>
-                  <Links>
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                <ProjectContent>
+                <VideoDisplay videoUrl={project.videoUrl} />
+                  <ProjectInfo>
+                    <h3>{project.name}</h3>
+                    <ExpandableText
+                      className={expandedIndex === project.id ? "expanded" : ""}
                     >
-                      Live Demo
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      {expandedIndex === project.id
+                        ? project.description
+                        : `${project.description.slice(0, 150)}...`}
+                    </ExpandableText>
+                    <ExpandButton onClick={() => toggleDescription(project.id)}>
+                      {expandedIndex === project.id ? "Show Less" : "Show More"}
+                    </ExpandButton>
+
+                    <p
+                      style={{
+                        marginTop: "5px",
+                        marginBottom: "10px",
+                        textAlign: "center",
+                      }}
                     >
-                      GitHub Repo
-                    </a>
-                  </Links>
-                </ProjectInfo>
+                      <strong>{project.technology}</strong>
+                    </p>
+                    <Links>
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Live Demo
+                      </a>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub Repo
+                      </a>
+                    </Links>
+                  </ProjectInfo>
+                </ProjectContent>
               </ProjectCard>
             </motion.div>
           ))}
@@ -86,8 +114,6 @@ export default function Project() {
     </Section>
   );
 }
-
-// Styled Components
 
 const Section = styled.section`
   padding: 4rem 1rem;
@@ -101,15 +127,10 @@ const Container = styled.div`
   width: 45%;
   max-width: 1000px;
   text-align: center;
+  margin: 0 auto;
 
-  h2 {
-    font-size: 2rem;
-    color: #a586ed;
-    margin-bottom: 2rem;
-  }
-  @media screen and (max-width: 768px) {
-    width: 100%;
-    z-index: 1;
+  @media screen and (max-width: 850px) {
+    width: 90%;
   }
 `;
 
@@ -117,54 +138,135 @@ const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 850px) {
     grid-template-columns: 1fr;
+    justify-contents: center;
+    max-width: 600px;
+    margin: 0 auto;
   }
 `;
 
 const ProjectCard = styled.article`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
   background: #1e1e1e;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+      to right,
+      #a586ed 20%,
+      #ff5555 30%,
+      #a388ed 70%,
+      #5fade4 80%
+    );
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+`;
+
+const ProjectContent = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+
+  @media screen and (max-width: 850px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const VideoWrapper = styled.div`
-  width: 100%;
-  aspect-ratio: 16 / 9; /* Ensures consistent video alignment */
+  width: 50%;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
+
+  @media screen and (max-width: 850px) {
+    width: 100%;
+    max-width: 500px;
+  }
 
   video {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    object-fit: cover; /* Ensures uniform alignment */
+    object-fit: cover;
   }
 `;
 
 const ProjectInfo = styled.div`
-  h3 {
-    font-size: 1.25rem;
-    color: #a586ed;
+  width: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (max-width: 850px) {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
   }
 
-  p {
-    color: #ddd;
-    line-height: 1.6;
-    font-size: 0.95rem;
-    margin: 0.5rem 0 1rem;
+  h3 {
+    text-align: center;
+  }
+`;
+
+const ExpandableText = styled.p`
+  color: #ddd;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem;
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  text-align: center;
+  &.expanded {
+    max-height: none;
+  }
+`;
+
+const ExpandButton = styled.button`
+  width: 50%;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #a586ed;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  transition: background-color 0.3s ease;
+
+  @media screen and (max-width: 850px) {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  &:hover {
+    background: #a586ed;
+    color: #0e0e0e;
   }
 `;
 
 const Links = styled.div`
   display: flex;
-  justify-content: center;
   gap: 1rem;
+  justify-content: center;
 
   a {
     text-decoration: none;
