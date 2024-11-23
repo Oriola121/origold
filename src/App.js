@@ -11,7 +11,7 @@ export default function App() {
       <GlobalStyle />
       <Main />
       <About />
-      {/* <Project/> */}
+      <Project/>
       <Contact />
     </div>
   );
