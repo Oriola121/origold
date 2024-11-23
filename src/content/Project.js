@@ -1,263 +1,136 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import myDataVideo from "../assets/myData.mp4";
-import { motion } from "framer-motion";
-import VideoDisplay from "./VideoDisplay";
+import { Volume2, VolumeX } from "lucide-react";
+import Head from "./Head";
+import Hero from "./Hero";
+import FootLayer from "./FootLayer";
+import Mehmed from '../assets/Mehmed Fatih intro music.mp3';
 
-const Projects = [
-  {
-    id: 1,
-    name: "myData",
-    description:
-      "A dynamic database application built with JavaScript, React, and styled-components. This app leverages Firebase to perform CRUD operations, allowing users to create, read, update, and delete data entries in real-time. It features an intuitive interface, responsive design, and seamless interactions, providing users with a smooth experience for managing their data. The application supports secure data storage and retrieval using Firebase's real-time database, with data synchronization across all connected clients. The design is fully responsive, ensuring compatibility across all device sizes.",
-    videoUrl: myDataVideo,
-    liveLink: "https://lsetf-student-database.web.app/student",
-    github: "https://github.com/Oriola121/origold",
-    technology: "JavaScript + React + styled-components + Firebase",
-  },
-  {
-    id: 2,
-    name: "MyCityApp Admin Dashboard",
-    description: `
-    A robust admin dashboard for managing and monitoring activities on the MyCityApp platform.
-    Built using Next.js, Zustand, and Tailwind CSS, the dashboard includes functionalities for 
-    handling business listings, services, uploaded documents, and user interactions. My role 
-    involved creating modular UI components, implementing state management, and integrating 
-    essential features to enhance usability for the platform administrators.
-`,
-    videoUrl: myDataVideo,
-    technology:
-      "JavaScript + Next + Tailwind CSS + Zustand + PostgreSQL + Prisma ",
-  },
-];
+export default function Home() {
+  const [isMuted, setIsMuted] = useState(false);
+  const [audio] = useState(new Audio(Mehmed));
 
-export default function Project() {
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  // Initial setup and autoplay
+  useEffect(() => {
+    // Setup audio configuration
+    audio.loop = true;
+    audio.volume = 0.3; // Set a fixed volume
+    
+    // Function to play audio
+    const playAudio = async () => {
+      try {
+        await audio.play();
+        console.log("Audio started playing automatically");
+      } catch (error) {
+        console.error("Autoplay failed:", error);
+        // If autoplay fails, we'll try playing on user interaction
+        const handleUserInteraction = async () => {
+          try {
+            await audio.play();
+            console.log("Audio started playing after user interaction");
+            // Remove the event listeners once audio starts
+            document.removeEventListener('click', handleUserInteraction);
+            document.removeEventListener('touchstart', handleUserInteraction);
+          } catch (err) {
+            console.error("Play failed after user interaction:", err);
+          }
+        };
 
-  const toggleDescription = (id) => {
-    if (expandedIndex === id) {
-      setExpandedIndex(null);
+        // Add listeners for both click and touch events
+        document.addEventListener('click', handleUserInteraction);
+        document.addEventListener('touchstart', handleUserInteraction);
+      }
+    };
+
+    // Attempt to play immediately
+    playAudio();
+
+    // Cleanup function
+    return () => {
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []); // Empty dependency array means this runs once on mount
+
+  // Handle mute state
+  useEffect(() => {
+    audio.muted = isMuted;
+  }, [isMuted, audio]);
+
+  const toggleMute = (e) => {
+    e.stopPropagation();
+    setIsMuted(!isMuted);
+    if (!isMuted) {
+      audio.pause();
     } else {
-      setExpandedIndex(id);
+      audio.play();
     }
   };
 
   return (
-    <Section id="projects">
-      <Container>
-        <ProjectsGrid>
-          {Projects.map((project) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <ProjectCard>
-                <ProjectContent>
-                  <VideoDisplay videoUrl={project.videoUrl} />
-                  <ProjectInfo>
-                    <h3>{project.name}</h3>
-                    <ExpandableText
-                      className={expandedIndex === project.id ? "expanded" : ""}
-                    >
-                      {expandedIndex === project.id
-                        ? project.description
-                        : `${project.description.slice(0, 150)}...`}
-                    </ExpandableText>
-                    <ExpandButton onClick={() => toggleDescription(project.id)}>
-                      {expandedIndex === project.id ? "Show Less" : "Show More"}
-                    </ExpandButton>
-
-                    <p
-                      style={{
-                        marginTop: "5px",
-                        marginBottom: "10px",
-                        textAlign: "center",
-                        fontFamily: "D-DIN Condensed",
-                      }}
-                    >
-                      <strong>{project.technology}</strong>
-                    </p>
-                    <Links>
-                      {project.liveLink && (
-                        <a
-                          href={project.liveLink}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Live Demo
-                        </a>
-                      )}
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          GitHub Repo
-                        </a>
-                      )}
-                    </Links>
-                  </ProjectInfo>
-                </ProjectContent>
-              </ProjectCard>
-            </motion.div>
-          ))}
-        </ProjectsGrid>
-      </Container>
-    </Section>
+    <MainContainer id="home">
+      <Head />
+      <Hero />
+      <FootLayer />
+      <AudioControls>
+        <AudioButton 
+          onClick={toggleMute}
+          $isMuted={isMuted}
+          title={isMuted ? "Unmute" : "Mute"}
+        >
+          {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+        </AudioButton>
+      </AudioControls>
+    </MainContainer>
   );
 }
 
-const Section = styled.section`
-  padding: 4rem 1rem;
-  background: #0e0e0e;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  font-family: Circular Std Book;
-`;
-
-const Container = styled.div`
-  width: 45%;
-  max-width: 1000px;
-  text-align: center;
-  margin: 0 auto;
-
-  @media screen and (max-width: 850px) {
-    width: 90%;
-  }
-`;
-
-const ProjectsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-
-  @media screen and (max-width: 850px) {
-    grid-template-columns: 1fr;
-    justify-contents: center;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-`;
-
-const ProjectCard = styled.article`
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  position: relative;
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(
-      to right,
-      #a586ed 20%,
-      #ff5555 30%,
-      #a388ed 70%,
-      #5fade4 80%
-    );
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
-  }
-`;
-
-const ProjectContent = styled.div`
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: center;
-
-  @media screen and (max-width: 850px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
-
-const ProjectInfo = styled.div`
-  width: 50%;
-  text-align: left;
+const MainContainer = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
-  @media screen and (max-width: 850px) {
-    width: 100%;
-    max-width: 500px;
-    margin-top: 20px;
-  }
-
-  h3 {
-    text-align: center;
-    font-family: D-DIN Condensed;
-  }
-`;
-
-const ExpandableText = styled.p`
-  color: #ddd;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  margin: 0.5rem 0 1rem;
-  max-height: 100px;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  text-align: center;
-  &.expanded {
-    max-height: none;
-  }
-`;
-
-const ExpandButton = styled.button`
-  width: 50%;
-  padding: 8px 16px;
-  background: transparent;
-  border: 1px solid #a586ed;
+  flex-wrap: wrap;
   color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px auto;
-  display: block;
-  transition: background-color 0.3s ease;
+  position: relative;
 
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 890px) {
     width: 100%;
-    max-width: 200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color: #fff;
   }
+`;
+
+const AudioControls = styled.div`
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px;
+  border-radius: 30px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+`;
+
+const AudioButton = styled.button`
+  background-color: ${props => props.$isMuted ? 'rgba(255, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
 
   &:hover {
-    background: #a586ed;
-    color: #0e0e0e;
-  }
-`;
-
-const Links = styled.div`
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-
-  a {
-    text-decoration: none;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border: 1px solid #a586ed;
-    border-radius: 5px;
-    transition: 0.3s ease;
-
-    &:hover {
-      background: #a586ed;
-      color: #0e0e0e;
-    }
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
   }
 `;
