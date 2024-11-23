@@ -30,13 +30,11 @@ flex-wrap: wrap;
   font-weight: 750;
   gradient-color: #A586ED #A388ED #56869D;
 @media screen and (max-width: 890px){
+  width: 90%;
+  margin-left: 0;
   font-size: 58px;
   font-weight: 750;
   
-}
-  @media screen and (max-width:410px){
-  padding-left: 20px;
-  }
 }
 
 .animated-product{

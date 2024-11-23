@@ -10,7 +10,7 @@ import {
 
 export default function Contact() {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact">
       <ContactWrapper>
         <p className="no-stranger">
           <span className="colorful-stranger">Dont be a stranger!</span>👋
@@ -87,13 +87,10 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 @media screen and (max-width: 890px){
-  width: 98%;
   height: 90%;
-  margin-left: 0.5rem;
+  width: 90%;
+  margin-left: 0;
 }
-  @media screen and (min-width: 350px) and (max-width: 410px){
-  padding-left: 10px;
-  }
 .no-stranger{
   font-family: Mark Pro;
   font-size: 46.4px;

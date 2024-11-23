@@ -24,24 +24,44 @@ export default function Head() {
               MENU <BsCaretDownFill className="menu-button" />
             </p>
             <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-              <ScrollLink 
-                to="home" 
-                spy={true} 
-                smooth={true} 
-                duration={500}
-                className="scroll-link"
-              >
-                Home
-              </ScrollLink>
-              <ScrollLink 
-                to="about" 
-                spy={true} 
-                smooth={true} 
-                duration={500}
-                className="scroll-link"
-              >
-                About
-              </ScrollLink>
+              <div className="links-grid">
+                <ScrollLink 
+                  to="home" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="scroll-link"
+                >
+                  Home
+                </ScrollLink>
+                <ScrollLink 
+                  to="about" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="scroll-link"
+                >
+                  About
+                </ScrollLink>
+                <ScrollLink 
+                  to="projects" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="scroll-link"
+                >
+                  Projects
+                </ScrollLink>
+                <ScrollLink 
+                  to="contact" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="scroll-link"
+                >
+                  Contact
+                </ScrollLink>
+              </div>
             </div>
           </div>
         </div>
@@ -165,19 +185,33 @@ const HeadContainer = styled.div`
     right: 0;
     top: calc(100% + 5px);
     background: #595a5e;
-    min-width: 120px;
+    min-width: 300px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 2;
     border-radius: 8px;
     transition: all 0.3s ease;
     transform: translateY(-10px);
     pointer-events: none;
+    padding: 1rem;
 
     &.show {
       visibility: visible;
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
+    }
+      @media screen and (max-width: 650px) {
+      min-width: 50px;
+    }
+  }
+
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+ justify-content: end;
+    @media screen and (max-width: 650px) {
+      grid-template-columns: 1fr;
     }
   }
 
@@ -188,9 +222,11 @@ const HeadContainer = styled.div`
     display: block;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
+    text-align: center;
+    
     &:hover {
       background-color: #a586ed;
+      border-radius: 4px;
     }
   }
 `;

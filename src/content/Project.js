@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export default function Project() {
   return (
-    <ProjectContainer>
+    <ProjectContainer id="projects">
       <ProjectWrapper>
         <a
           href="https://lsetf-student-database.web.app/student"
