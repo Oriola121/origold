@@ -119,7 +119,6 @@ const HeadContainer = styled.div`
     @media screen and (max-width: 890px) {
       height: 35%;
       width: 90%;
-      // margin-left: 0.5rem;
       font-size: 12px;
     }
   }
@@ -149,7 +148,7 @@ const HeadContainer = styled.div`
           width: 0;
         }
         to {
-          width: 50.5%;
+          width: 51.5%;
         }
       }
     }
