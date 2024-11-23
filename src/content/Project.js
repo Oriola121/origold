@@ -190,24 +190,6 @@ const ProjectContent = styled.div`
   }
 `;
 
-const VideoWrapper = styled.div`
-  width: 50%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-
-  @media screen and (max-width: 850px) {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  video {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-    object-fit: cover;
-  }
-`;
-
 const ProjectInfo = styled.div`
   width: 50%;
   text-align: left;
