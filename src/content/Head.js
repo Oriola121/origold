@@ -78,6 +78,8 @@ const HeadContainer = styled.div`
 
   .fold {
     height: 200px;
+    position: fixed;
+
   }
 
   .profile-img {

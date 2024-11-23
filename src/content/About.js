@@ -8,7 +8,7 @@ export default function About() {
       <AboutWrapper>
       <img src={profileImg} alt='Oriola' className='profile-img'/>
       <p className='about-me'>Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform digital products, 
-      <br/>from daily struggles to delightful experiences! (I'm a frontend developer, by the way).</p>
+      from daily struggles to delightful experiences! (I'm a frontend developer, by the way).</p>
       </AboutWrapper>
     </AboutContainer>
   )
@@ -21,6 +21,7 @@ background: #0E0E0E;
 display: flex;
 align-items: center;
 justify-content: center;
+
 @media screen and (max-width: 890px){
   width: 100%;
   height: 30%;
@@ -31,19 +32,17 @@ justify-content: center;
 }
 `
 const AboutWrapper = styled.div`
-width: 70%;
-height: 70%;
+width: 45%;
+height: 90%;
 display: flex;
 align-items: center;
 justify-content: center;
 color: #fff;
-margin-top: 4rem;
-margin-left: 3rem;
 gap: 1rem;
+line-height: 1.3rem;
 @media screen and (max-width: 890px){
-  margin-left: 0;
   width: 90%;
-  height: 80%;
+  height: 90%;
 }
 
 .profile-img{

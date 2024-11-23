@@ -81,7 +81,7 @@ const ContactContainer = styled.div`
   justify-content: center;
 `;
 const ContactWrapper = styled.div`
-width: 52%;
+width: 45%;
 height: 90%;
 display: flex;
 flex-direction: column;

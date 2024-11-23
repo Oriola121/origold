@@ -35,9 +35,11 @@ const FootContainer = styled.div`
 
   .fold {
     height: 200px;
+    position: fixed;
+    right: 0;
   }
   .footer-area {
-    width: 80%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;

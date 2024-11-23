@@ -28,11 +28,15 @@ const ProjectContainer = styled.div`
   justify-content: center;
 `;
 const ProjectWrapper = styled.div`
-  width: 52%;
+  width: 45%;
   height: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (max-width: 890px){
+  // height: 90%;
+  width: 90%;
+}
   .pro1 {
     width: 70%;
     height: 70%;
