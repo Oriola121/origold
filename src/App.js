@@ -3,7 +3,7 @@ import Main from "./Main";
 import GlobalStyle from "./GlobalStyle";
 import About from "./content/About";
 import Contact from "./content/Contact";
-// import Project from './content/Project'
+import Project from './content/Project'
 
 export default function App() {
   return (
