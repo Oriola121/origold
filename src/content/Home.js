@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import Head from "./content/Head";
-import Hero from "./content/Hero";
-import FootLayer from "./content/FootLayer";
+import Head from "./Head";
+import Hero from "./Hero";
+import FootLayer from "./FootLayer";
 
-export default function Main() {
+export default function Home() {
   return (
     <MainContainer id="home">
       <Head />
