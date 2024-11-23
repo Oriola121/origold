@@ -17,28 +17,17 @@ const Projects = [
   },
   {
     id: 2,
-    name: "MyCityApp Admin",
-    description: "A database app using Firebase to perform CRUD operations.",
-    videoUrl: myDataVideo,
-    liveLink: "https://example.com/project2",
-    github: "https://github.com/Oriola121/origold",
+    name: "MyCityApp Admin Dashboard",
+    description: `
+    A robust admin dashboard for managing and monitoring activities on the MyCityApp platform.
+    Built using Next.js, Zustand, and Tailwind CSS, the dashboard includes functionalities for 
+    handling business listings, services, uploaded documents, and user interactions. My role 
+    involved creating modular UI components, implementing state management, and integrating 
+    essential features to enhance usability for the platform administrators.
+`,
+    videoUrl: myDataVideo, 
+    technology: "JavaScript + Next + Tailwind CSS + Zustand + PostgreSQL + Prisma ",
   },
-  // {
-  //   id: 3,
-  //   name: "Project 3",
-  //   description: "A database app using Firebase to perform CRUD operations.",
-  //   videoUrl: myDataVideo,
-  //   liveLink: "https://example.com/project3",
-  //   github: "https://github.com/Oriola121/origold",
-  // },
-  // {
-  //   id: 4,
-  //   name: "Project 4",
-  //   description: "A database app using Firebase to perform CRUD operations.",
-  //   videoUrl: myDataVideo,
-  //   liveLink: "https://example.com/project4",
-  //   github: "https://github.com/Oriola121/origold",
-  // },
 ];
 
 export default function Project() {
@@ -65,7 +54,7 @@ export default function Project() {
             >
               <ProjectCard>
                 <ProjectContent>
-                <VideoDisplay videoUrl={project.videoUrl} />
+                  <VideoDisplay videoUrl={project.videoUrl} />
                   <ProjectInfo>
                     <h3>{project.name}</h3>
                     <ExpandableText
@@ -89,20 +78,24 @@ export default function Project() {
                       <strong>{project.technology}</strong>
                     </p>
                     <Links>
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Live Demo
-                      </a>
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub Repo
-                      </a>
+                      {project.liveLink && (
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Demo
+                        </a>
+                      )}
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          GitHub Repo
+                        </a>
+                      )}
                     </Links>
                   </ProjectInfo>
                 </ProjectContent>
