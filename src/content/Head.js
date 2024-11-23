@@ -118,8 +118,8 @@ const HeadContainer = styled.div`
 
     @media screen and (max-width: 890px) {
       height: 35%;
-      width: 80%;
-      margin-left: 0.5rem;
+      width: 90%;
+      // margin-left: 0.5rem;
       font-size: 12px;
     }
   }
