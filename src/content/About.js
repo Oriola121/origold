@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import profileImg from '../assets/ori.jpg'            
+import profileImg from '../assets/oriola.jpg'            
 
 export default function About() {
   return (
     <AboutContainer id='about'>
       <AboutWrapper>
-      <img src={profileImg} alt='Origold' className='profile-img'/>
+      <img src={profileImg} alt='Oriola' className='profile-img'/>
       <p className='about-me'>Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform digital products, 
       <br/>from daily struggles to delightful experiences! (I'm a frontend developer, by the way).</p>
       </AboutWrapper>
