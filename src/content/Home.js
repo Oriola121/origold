@@ -10,48 +10,46 @@ import Mehmed from '../assets/MehmedFatih.mp3';
 export default function Home() {
   const [isMuted, setIsMuted] = useState(false);
   const [audio] = useState(new Audio(Mehmed));
+  const [showIndicator, setShowIndicator] = useState(false);
 
   // Initial setup and autoplay
   useEffect(() => {
-    // Setup audio configuration
     audio.loop = true;
-    audio.volume = 0.3; // Set a fixed volume
-    
-    // Function to play audio
+    audio.volume = 0.3;
+
     const playAudio = async () => {
       try {
         await audio.play();
         console.log("Audio started playing automatically");
       } catch (error) {
-        console.error("Autoplay failed:", error);
-        // If autoplay fails, we'll try playing on user interaction
+        console.error("Autoplay failed. Waiting for user interaction.", error);
+        setShowIndicator(true); // Show the overlay for user interaction
+        
         const handleUserInteraction = async () => {
           try {
             await audio.play();
             console.log("Audio started playing after user interaction");
-            // Remove the event listeners once audio starts
-            document.removeEventListener('click', handleUserInteraction);
-            document.removeEventListener('touchstart', handleUserInteraction);
+            setShowIndicator(false); // Hide the overlay after interaction
+            document.removeEventListener("click", handleUserInteraction);
+            document.removeEventListener("touchstart", handleUserInteraction);
           } catch (err) {
             console.error("Play failed after user interaction:", err);
           }
         };
 
-        // Add listeners for both click and touch events
-        document.addEventListener('click', handleUserInteraction);
-        document.addEventListener('touchstart', handleUserInteraction);
+        // Add event listeners for user interaction
+        document.addEventListener("click", handleUserInteraction);
+        document.addEventListener("touchstart", handleUserInteraction);
       }
     };
 
-    // Attempt to play immediately
     playAudio();
 
-    // Cleanup function
     return () => {
       audio.pause();
       audio.currentTime = 0;
     };
-  }, []); // Empty dependency array means this runs once on mount
+  }, [audio]);
 
   // Handle mute state
   useEffect(() => {
@@ -70,6 +68,11 @@ export default function Home() {
 
   return (
     <MainContainer id="home">
+      {showIndicator && (
+        <Overlay>
+          <IndicatorText>Click anywhere to listen to sound</IndicatorText>
+        </Overlay>
+      )}
       <Head />
       <Hero />
       <FootLayer />
@@ -86,6 +89,7 @@ export default function Home() {
   );
 }
 
+// Styled components
 const MainContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -103,6 +107,29 @@ const MainContainer = styled.div`
     flex-wrap: wrap;
     color: #fff;
   }
+`;
+
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+`;
+
+const IndicatorText = styled.div`
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 `;
 
 const AudioControls = styled.div`
