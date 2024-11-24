@@ -5,7 +5,7 @@ import { Volume2, VolumeX } from "lucide-react";
 import Head from "./Head";
 import Hero from "./Hero";
 import FootLayer from "./FootLayer";
-import Mehmed from '../assets/Mehmed Fatih intro music.mp3';
+import Mehmed from '../assets/MehmedFatih.mp3';
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(false);
