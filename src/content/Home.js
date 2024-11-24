@@ -5,7 +5,7 @@ import { Volume2, VolumeX } from "lucide-react";
 import Head from "./Head";
 import Hero from "./Hero";
 import FootLayer from "./FootLayer";
-import Mehmed from '../assets/MehmedFatih.mp3';
+import Mehmed from "../assets/MehmedFatih.mp3";
 
 export default function Home() {
   const [isMuted, setIsMuted] = useState(false);
@@ -24,7 +24,7 @@ export default function Home() {
       } catch (error) {
         console.error("Autoplay failed. Waiting for user interaction.", error);
         setShowIndicator(true); // Show the overlay for user interaction
-        
+
         const handleUserInteraction = async () => {
           try {
             await audio.play();
@@ -77,7 +77,7 @@ export default function Home() {
       <Hero />
       <FootLayer />
       <AudioControls>
-        <AudioButton 
+        <AudioButton
           onClick={toggleMute}
           $isMuted={isMuted}
           title={isMuted ? "Unmute" : "Mute"}
@@ -145,7 +145,11 @@ const AudioControls = styled.div`
 `;
 
 const AudioButton = styled.button`
-  background-color: ${props => props.$isMuted ? 'rgba(255, 0, 0, 0.2)' : 'rgba(255, 255, 255, 0.1)'};
+  background: ${(props) =>
+    props.$isMuted
+      ? "rgba(255, 0, 0, 0.2)"
+      : "linear-gradient(to right, #A586ED, #FF5555, #A388ED, #5FADE4)"};
+  background-size: 300% 300%;
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -155,10 +159,33 @@ const AudioButton = styled.button`
   justify-content: center;
   cursor: pointer;
   color: white;
+  animation: ${(props) =>
+    props.$isMuted ? "" : "gradientFlow 3s infinite, zoomOutIn 1s infinite"};
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
+    transform: scale(1.1);
+  }
+
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes zoomOutIn {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
   }
 `;
