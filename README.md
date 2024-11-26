@@ -7,8 +7,8 @@ Welcome to my personal portfolio! This project showcases my frontend development
 ## Technologies Used
 
 * React.js: A popular JavaScript library for building user interfaces.
-* Tailwind CSS: A utility-first CSS framework for rapidly styling web applications.
-* React Router: A library for managing routing and navigation in a React application.
+* Styled Components: A library for styling React components using component-level styles.
+* React Scroll: A library for smooth scrolling between sections in a React application.
 * Framer Motion: A motion library for creating smooth animations and transitions.
 * React Icons: A library providing a wide range of icons for your projects.
 
@@ -16,16 +16,16 @@ Welcome to my personal portfolio! This project showcases my frontend development
 
 * Responsive design: The portfolio is fully responsive to ensure a seamless experience on different devices.
 * Smooth animations: Framer Motion is used to add elegant animations and transitions.
-* Easy navigation: React Router allows for smooth navigation between different sections of the portfolio.
+* Easy navigation: React Scroll allows for smooth scrolling between different sections of the portfolio.
 * Project showcase: A dedicated section to showcase my projects with descriptions and links.
 * Contact information: Users can easily get in touch with me through provided contact details.
 
 ## Installation and Setup
 
 1. Clone this repository to your local machine using `git clone`.
-2. Navigate to the project directory: `cd ...`.
-3. Install project dependencies using `yarn install`.
-4. Start the development server: `yarn start`.
+2. Navigate to the project directory: `cd ...`
+3. Install project dependencies using `yarn install`
+4. Start the development server: `yarn start`
 5. Open your web browser and navigate to `http://localhost:3000` to view the portfolio.
 
 ## Usage
