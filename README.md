@@ -11,6 +11,7 @@ Welcome to my personal portfolio! This project showcases my frontend development
 * React Scroll: A library for smooth scrolling between sections in a React application.
 * Framer Motion: A motion library for creating smooth animations and transitions.
 * React Icons: A library providing a wide range of icons for your projects.
+* React Intersection Observer: A library that allows components to be triggered or animated based on their visibility in the viewport. It's used to trigger animations when certain elements enter or exit the screen.
 
 ## Features
 
