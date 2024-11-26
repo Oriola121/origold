@@ -53,6 +53,15 @@ export default function Head() {
                   Projects
                 </ScrollLink>
                 <ScrollLink 
+                  to="skills" 
+                  spy={true} 
+                  smooth={true} 
+                  duration={500}
+                  className="scroll-link"
+                >
+                  Skills
+                </ScrollLink>
+                <ScrollLink 
                   to="contact" 
                   spy={true} 
                   smooth={true} 

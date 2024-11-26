@@ -159,13 +159,7 @@ const ProjectCard = styled.article`
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(
-      to right,
-      #a586ed 20%,
-      #ff5555 30%,
-      #a388ed 70%,
-      #5fade4 80%
-    );
+    background: linear-gradient(to right, #a586ed, lightblue, gold, #a388ed);
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }

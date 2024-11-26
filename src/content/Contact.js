@@ -7,65 +7,62 @@ import {
   FaWhatsapp,
   FaFacebook,
 } from "react-icons/fa";
+import { GrMailOption } from "react-icons/gr";
+
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    icon: <FaLinkedin />,
+    url: "https://www.linkedin.com/in/abdurrahman-muhibudeen/",
+  },
+  {
+    name: "Github",
+    icon: <FaGithub />,
+    url: "https://github.com/Oriola121",
+  },
+  {
+    name: "Whatsapp",
+    icon: <FaWhatsapp />,
+    url: "https://wa.me/2348102557217",
+  },
+  {
+    name: "Facebook",
+    icon: <FaFacebook />,
+    url: "https://web.facebook.com/OrigoldMuhibudeen",
+  },
+  {
+    name: "Email",
+    icon: <GrMailOption />,
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=muhibudeen.oriola@gmail.com",
+  },
+  {
+    name: "Twitter",
+    icon: <FaTwitter />,
+    url: "https://twitter.com/Realtor_OriGold",
+  },
+];
 
 export default function Contact() {
   return (
     <ContactContainer id="contact">
       <ContactWrapper>
         <p className="no-stranger">
-          <span className="colorful-stranger">Dont be a stranger!</span>👋
+          <span className="colorful-stranger">Don't be a stranger!</span>👋
         </p>
         <p className="connect-note">Connect with me online</p>
         <div className="socials-area">
-          <span className="social-1">
+          {socialLinks.map((social, index) => (
             <a
-              href="https://www.linkedin.com/in/abdurrahman-muhibudeen/"
+              key={index}
+              href={social.url}
               target="_blank"
-              className="social-link"
-              rel="noreferrer"
-            >
-              <FaLinkedin />
-              <p>Linkedin</p>
-            </a>
-            <a
-              href="https://github.com/Oriola121"
-              target="_blank"
-              className="social-link"
-              rel="noreferrer"
-            >
-              <FaGithub />
-              <p>Github</p>
-            </a>
-            <a
-              href="https://wa.me/2348102557217"
               rel="noopener noreferrer"
-              target="_blank"
               className="social-link"
             >
-              <FaWhatsapp />
-              <p>Whatsapp</p>
+              {social.icon}
+              <p>{social.name}</p>
             </a>
-          </span>
-          <span className="socials-2">
-            <a
-              href="https://twitter.com/Realtor_OriGold"
-              target="_blank"
-              className="social-link"
-              rel="noreferrer"
-            >
-              <FaTwitter />
-              <p>Twitter</p>
-            </a>
-            <a
-              href="https://web.facebook.com/OrigoldMuhibudeen"
-              target="_blank"
-              className="social-link"
-              rel="noreferrer"
-            >
-              <FaFacebook />
-              <p>Facebook</p>
-            </a>
-          </span>
+          ))}
         </div>
       </ContactWrapper>
     </ContactContainer>
@@ -79,84 +76,60 @@ const ContactContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  
 `;
+
 const ContactWrapper = styled.div`
-width: 45%;
-height: 90%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-@media screen and (max-width: 890px){
+  width: 45%;
   height: 90%;
-  width: 90%;
-  margin-left: 0;
-  z-index: 1;
-}
-.no-stranger{
-  font-family: Mark Pro;
-  font-size: 46.4px;
-  font-weight: 700;
-}
-.colorful-stranger{
-  color: transparent;
-  background: linear-gradient(to right, #A586ED, lightblue, gold, #A388ED);
-  -webkit-backgroung-clip: text;
-  background-clip: text;
-}
-.connect-note{
-  font-family: Circular Std Book;
-  font-size: 15.776px;
-  font-weight: 400;
-  line-height: 20.5088px;
-  color: rgb(196, 196, 196);
-}
-.socials-area{
-  width: 50%;
-  height: 30%; 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-.social-1{
-  display: flex;
-  gap: 2rem;
-}
-.socials-2{
-  display: flex;
-  gap: 2.5rem;
-}
-.social-link{
-  display: flex;
-  gap: 0.5rem;
-  font-family: D-DIN Condensed;
-  font-size: 20px;
-  font-weight: 100;
-  line-height: 17.0752px;
-  color: rgb(255, 255, 255);
-  text-decoration; none;
-  align-items: center;
-}
-a:{
-  color: #fff;
-  text-decoration: none;
-}
+  @media screen and (max-width: 890px) {
+    width: 90%;
+    z-index: 1;
+  }
 
-a:link{
-  color: #fff;
-  text-decoration: none;
-}
+  .no-stranger {
+    font-family: Mark Pro;
+    font-size: 46.4px;
+    font-weight: 700;
+  }
 
-a:visited{
-  color: #fff;
-  text-decoration: none;
-}
+  .colorful-stranger {
+    color: transparent;
+    background: linear-gradient(to right, #a586ed, lightblue, gold, #a388ed);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
 
-a:hover{
-  color: #A586ED;
-  text-decoration: none;
-}
-}
+  .connect-note {
+    font-family: Circular Std Book;
+    font-size: 15.776px;
+    font-weight: 400;
+    line-height: 20.5088px;
+    color: rgb(196, 196, 196);
+  }
+
+  .socials-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: D-DIN Condensed;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 17.0752px;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #a586ed;
+    }
+  }
 `;

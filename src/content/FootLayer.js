@@ -93,18 +93,12 @@ const AnimatedScrollLink = styled(ScrollLink)`
   }
 
   &:hover {
-   color: #A586ED;
-    
+    color: #a586ed;
+
     &:after {
       transform: scaleX(1);
       transform-origin: bottom left;
-      background: linear-gradient(
-        to right,
-        #A586ED 20%,
-        #FF5555 30%,
-        #A388ED 70%,
-        #5FADE4 80%
-      );
+      background: linear-gradient(to right, #a586ed, lightblue, gold, #a388ed);
     }
   }
 `;
@@ -120,10 +114,10 @@ const DownloadLink = styled.a`
   transition: all 0.3s ease;
 
   &:hover {
-   color: #A586ED;
-    
+    color: #a586ed;
+
     svg {
-      fill: #A586ED;
+      fill: #a586ed;
     }
   }
 `;
