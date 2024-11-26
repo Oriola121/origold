@@ -2,8 +2,6 @@
 
 # My Personal Portfolio
 
-![Turning ideas into real life products is what I do](portfolio-header.png)
-
 Welcome to my personal portfolio! This project showcases my frontend development skills and the projects I've worked on. Feel free to explore the different sections to learn more about me and my work.
 
 ## Technologies Used
@@ -25,10 +23,10 @@ Welcome to my personal portfolio! This project showcases my frontend development
 ## Installation and Setup
 
 1. Clone this repository to your local machine using `git clone`.
-2. Navigate to the project directory: `cd ....`.
-3. Install project dependencies using `npm install`.
-4. Start the development server: `npm run dev`.
-5. Open your web browser and navigate to `http://localhost:5173` to view the portfolio.
+2. Navigate to the project directory: `cd ...`.
+3. Install project dependencies using `yarn install`.
+4. Start the development server: `yarn start`.
+5. Open your web browser and navigate to `http://localhost:3000` to view the portfolio.
 
 ## Usage
 
