@@ -4,6 +4,7 @@ import myDataVideo from "../assets/myData.mp4";
 import MyCityApp from "../assets/MyCityApp.mp4";
 import { motion } from "framer-motion";
 import VideoDisplay from "./VideoDisplay";
+import { useInView } from "react-intersection-observer";
 
 const Projects = [
   {
@@ -34,6 +35,10 @@ const Projects = [
 
 export default function Project() {
   const [expandedIndex, setExpandedIndex] = useState(null);
+  const [projectRef] = useInView({
+    threshold: 0.9,
+    triggerOnce: false,
+  });
 
   const toggleDescription = (id) => {
     if (expandedIndex === id) {
@@ -47,11 +52,12 @@ export default function Project() {
     <Section id="projects">
       <Container>
         <ProjectsGrid>
-          {Projects.map((project) => (
+          {Projects.map((project, id) => (
             <motion.div
-              key={project.id}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              key={id}
+              ref={projectRef}
+              initial={{ opacity: 0, y: id % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
               <ProjectCard>
