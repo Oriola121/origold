@@ -89,7 +89,6 @@ export default function Home() {
   );
 }
 
-// Styled components
 const MainContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -98,14 +97,6 @@ const MainContainer = styled.div`
   flex-wrap: wrap;
   color: #fff;
   position: relative;
-
-  @media screen and (max-width: 890px) {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    color: #fff;
   }
 `;
 

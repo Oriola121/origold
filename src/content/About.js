@@ -1,36 +1,34 @@
-import React from 'react'
-import styled from 'styled-components'
-import profileImg from '../assets/oriola.jpg'            
+import React from "react";
+import styled from "styled-components";
+import profileImg from "../assets/oriola.jpg";
+import { useInView } from "react-intersection-observer";
 
 export default function About() {
+  const [sectionRef, inView] = useInView({
+    threshold: 0.5,
+    triggerOnce: false,
+  });
   return (
-    <AboutContainer id='about'>
-      <AboutWrapper>
-      <img src={profileImg} alt='Oriola' className='profile-img'/>
-      <p className='about-me'>Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform digital products, 
-      from daily struggles to delightful experiences! (I'm a frontend developer, by the way).</p>
+    <AboutContainer id="about" ref={sectionRef}>
+      <AboutWrapper className={inView ? "animate" : ""}>
+        <img src={profileImg} alt="Oriola" className="profile-img" />
+        <p className="about-me">
+          Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform
+          digital products, from daily struggles to delightful experiences! (I'm
+          a frontend developer, by the way).
+        </p>
       </AboutWrapper>
     </AboutContainer>
-  )
+  );
 }
 
 const AboutContainer = styled.div`
-width: 100%;
-height: 30%;
-background: #0E0E0E;
-display: flex;
-align-items: center;
-justify-content: center;
-
-@media screen and (max-width: 890px){
-  width: 100%;
-  height: 30%;
-  background: #0E0E0E;
+  background: #0e0e0e;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-`
+  padding: 4rem 1rem;
+  margin: 0 auto;
+`;
 const AboutWrapper = styled.div`
 width: 45%;
 height: 90%;
@@ -40,6 +38,14 @@ justify-content: center;
 color: #fff;
 gap: 1rem;
 line-height: 1.3rem;
+opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+
+  &.animate {
+  opacity: 1;
+  transform: translateY(0);
+    }
 @media screen and (max-width: 890px){
   width: 90%;
   height: 90%;
@@ -58,4 +64,4 @@ line-height: 1.3rem;
   color: rgb(196, 196, 196);
   Line height: 20.5088px;
 }
-`
+`;

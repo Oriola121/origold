@@ -8,6 +8,8 @@ import {
   FaFacebook,
 } from "react-icons/fa";
 import { GrMailOption } from "react-icons/gr";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
 
 const socialLinks = [
   {
@@ -43,6 +45,10 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+  const [contactRef] = useInView({
+    threshold: 0.9,
+    triggerOnce: false,
+  });
   return (
     <ContactContainer id="contact">
       <ContactWrapper>
@@ -52,8 +58,12 @@ export default function Contact() {
         <p className="connect-note">Connect with me online</p>
         <div className="socials-area">
           {socialLinks.map((social, index) => (
-            <a
+            <motion.a
               key={index}
+              ref={contactRef}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
               href={social.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -61,7 +71,7 @@ export default function Contact() {
             >
               {social.icon}
               <p>{social.name}</p>
-            </a>
+            </motion.a>
           ))}
         </div>
       </ContactWrapper>
@@ -70,12 +80,12 @@ export default function Contact() {
 }
 
 const ContactContainer = styled.div`
-  width: 100%;
-  height: 50%;
+  padding: 4rem 1rem;
+  overflow: hidden;
   background: #0e0e0e;
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 0 auto;
 `;
 
 const ContactWrapper = styled.div`
@@ -115,6 +125,14 @@ const ContactWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 2rem;
+    width: 100%;
+    @media screen and (max-width: 850px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width: 450px) {
+      grid-template-columns: repeat(2, minmax(90px, 1fr));
+      gap: 0.8rem;
+    }
   }
 
   .social-link {

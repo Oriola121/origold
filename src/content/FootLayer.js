@@ -3,7 +3,7 @@ import fold1 from "../assets/fold2.webp";
 import styled from "styled-components";
 import Socials from "./Socials";
 import { IoMdDownload } from "react-icons/io";
-import CV from "../assets/Muhibudeen AbdurRahman Resume.pdf";
+import Resume from "../assets/Muhibudeen AbdurRahman Resume.pdf";
 import { Link as ScrollLink } from "react-scroll";
 
 export default function FootLayer() {
@@ -14,8 +14,8 @@ export default function FootLayer() {
           <AnimatedScrollLink to="projects" smooth={true}>
             VIEW PROJECTS
           </AnimatedScrollLink>
-          <DownloadLink href={CV} download>
-            DOWNLOAD CV
+          <DownloadLink href={Resume} download>
+            DOWNLOAD RESUME
             <IoMdDownload />
           </DownloadLink>
           <Socials />
