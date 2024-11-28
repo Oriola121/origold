@@ -19,11 +19,11 @@ Welcome to my personal portfolio! This project showcases my front-end developmen
 * Smooth animations: Framer Motion is used to add elegant animations and transitions.
 * Easy navigation: React Scroll allows for smooth scrolling between different sections of the portfolio.
 * Project showcase: A dedicated section to showcase my projects with descriptions and links.
-* Contact information: Users can easily get in touch with me through provided contact details.
+* Contact information: Users can easily get in touch with me through the provided contact details.
 
 ## Installation and Setup
 
-1. Clone this repository to your local machine using `git clone`.
+1. Clone this repository to your local machine using `git clone`
 2. Navigate to the project directory: `cd ...`
 3. Install project dependencies using `yarn install`
 4. Start the development server: `yarn start`
@@ -31,7 +31,7 @@ Welcome to my personal portfolio! This project showcases my front-end developmen
 
 ## Usage
 
-Feel free to customize this portfolio to showcase your own projects and skills. Update the project descriptions, images, and links to match your work.
+Feel free to customize this portfolio to showcase your projects and skills. Update the project descriptions, images, and links to match your work.
 
 ## Contact
 
