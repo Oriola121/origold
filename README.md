@@ -2,7 +2,7 @@
 
 ![alt text](/src/assets/homepage.png)
 
-Welcome to my personal portfolio! This project showcases my front-end development skills and the projects I've worked on. Feel free to explore the different sections to learn more about me and my work.
+Welcome to my portfolio! This project showcases my front-end development skills and the projects I've worked on. Feel free to explore the different sections to learn more about me and my work.
 
 ## Technologies Used
 
@@ -10,14 +10,14 @@ Welcome to my personal portfolio! This project showcases my front-end developmen
 * Styled Components: A library for styling React components using component-level styles.
 * React Scroll: A library for smooth scrolling between sections in a React application.
 * Framer Motion: A motion library for creating smooth animations and transitions.
-* React Icons: A library providing a wide range of icons for your projects.
+* React Icons: A library providing many icons for your projects.
 * React Intersection Observer: A library that allows components to be triggered or animated based on their visibility in the viewport. It's used to trigger animations when certain elements enter or exit the screen.
 
 ## Features
 
 * Responsive design: The portfolio is fully responsive to ensure a seamless experience on different devices.
-* Smooth animations: Framer Motion is used to add elegant animations and transitions.
-* Easy navigation: React Scroll allows for smooth scrolling between different sections of the portfolio.
+* Smooth animations: Framer Motion adds elegant animations and transitions.
+* Easy navigation: React Scroll allows for smooth scrolling between different portfolio sections.
 * Project showcase: A dedicated section to showcase my projects with descriptions and links.
 * Contact information: Users can easily get in touch with me through the provided contact details.
 
