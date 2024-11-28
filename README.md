@@ -1,8 +1,8 @@
+# Oriola121 Personal Portfolio Website
+
 ![alt text](/src/assets/homepage.png)
 
-# My Personal Portfolio
-
-Welcome to my personal portfolio! This project showcases my frontend development skills and the projects I've worked on. Feel free to explore the different sections to learn more about me and my work.
+Welcome to my personal portfolio! This project showcases my front-end development skills and the projects I've worked on. Feel free to explore the different sections to learn more about me and my work.
 
 ## Technologies Used
 
