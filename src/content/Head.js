@@ -15,7 +15,7 @@ export default function Head() {
         <div className="box-content">
           <img src={profileImg} className="profile-img" alt="profile" />
           <p className="animated-name">MUHIBUDEEN ABDURRAHMAN ORIOLA</p>
-          <div 
+          <div
             className="dropdown-container"
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
@@ -23,48 +23,51 @@ export default function Head() {
             <p className="dropdown-button">
               MENU <BsCaretDownFill className="menu-button" />
             </p>
-            <div className={`dropdown-content ${isDropdownOpen ? 'show' : ''}`}>
-              <div className="links-grid">
-                <ScrollLink 
-                  to="home" 
-                  spy={true} 
-                  smooth={true} 
+            <div className={`dropdown-content ${isDropdownOpen ? "show" : ""}`}>
+              <div
+                className="links-grid"
+                onClick={() => setIsDropdownOpen(false)}
+              >
+                <ScrollLink
+                  to="home"
+                  spy={true}
+                  smooth={true}
                   duration={500}
                   className="scroll-link"
                 >
                   Home
                 </ScrollLink>
-                <ScrollLink 
-                  to="about" 
-                  spy={true} 
-                  smooth={true} 
+                <ScrollLink
+                  to="about"
+                  spy={true}
+                  smooth={true}
                   duration={500}
                   className="scroll-link"
                 >
                   About
                 </ScrollLink>
-                <ScrollLink 
-                  to="projects" 
-                  spy={true} 
-                  smooth={true} 
+                <ScrollLink
+                  to="projects"
+                  spy={true}
+                  smooth={true}
                   duration={500}
                   className="scroll-link"
                 >
                   Projects
                 </ScrollLink>
-                <ScrollLink 
-                  to="skills" 
-                  spy={true} 
-                  smooth={true} 
+                <ScrollLink
+                  to="skills"
+                  spy={true}
+                  smooth={true}
                   duration={500}
                   className="scroll-link"
                 >
                   Skills
                 </ScrollLink>
-                <ScrollLink 
-                  to="contact" 
-                  spy={true} 
-                  smooth={true} 
+                <ScrollLink
+                  to="contact"
+                  spy={true}
+                  smooth={true}
                   duration={500}
                   className="scroll-link"
                 >
@@ -146,7 +149,7 @@ const HeadContainer = styled.div`
         width: 0;
       }
       to {
-        width: 41.5%;
+        width: 43%;
       }
     }
 
@@ -209,7 +212,7 @@ const HeadContainer = styled.div`
       transform: translateY(0);
       pointer-events: auto;
     }
-      @media screen and (max-width: 650px) {
+    @media screen and (max-width: 650px) {
       min-width: 50px;
     }
   }
@@ -218,7 +221,7 @@ const HeadContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
- justify-content: end;
+    justify-content: end;
     @media screen and (max-width: 650px) {
       grid-template-columns: 1fr;
     }
@@ -232,7 +235,7 @@ const HeadContainer = styled.div`
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
-    
+
     &:hover {
       background-color: #a586ed;
       border-radius: 4px;

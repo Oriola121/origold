@@ -14,7 +14,7 @@ const Projects = [
       "A dynamic database application built with JavaScript, React, and styled-components. This app leverages Firebase to perform CRUD operations, allowing users to create, read, update, and delete data entries in real-time. It features an intuitive interface, responsive design, and seamless interactions, providing users with a smooth experience for managing their data. The application supports secure data storage and retrieval using Firebase's real-time database, with data synchronization across all connected clients. The design is fully responsive, ensuring compatibility across all device sizes.",
     videoUrl: myDataVideo,
     liveLink: "https://lsetf-student-database.web.app/student",
-    github: "https://github.com/Oriola121/origold",
+    github: "https://github.com/Oriola121/lsetf-students-database",
     technology: "JavaScript + React + styled-components + Firebase",
   },
   {

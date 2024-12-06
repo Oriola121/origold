@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import profileImg from "../assets/oriola.jpg";
 import { useInView } from "react-intersection-observer";
-
+// import Experience from "./Experience";
 export default function About() {
   const [sectionRef, inView] = useInView({
     threshold: 0.5,
@@ -11,12 +11,14 @@ export default function About() {
   return (
     <AboutContainer id="about" ref={sectionRef}>
       <AboutWrapper className={inView ? "animate" : ""}>
+        <div>
         <img src={profileImg} alt="Oriola" className="profile-img" />
         <p className="about-me">
           Hello stranger! 👋, I'm AbdurRahman and I'm on a mission to transform
           digital products, from daily struggles to delightful experiences! (I'm
           a frontend developer, by the way).
-        </p>
+        </p></div>
+        {/* <Experience /> */}
       </AboutWrapper>
     </AboutContainer>
   );
@@ -32,9 +34,6 @@ const AboutContainer = styled.div`
 const AboutWrapper = styled.div`
 width: 45%;
 height: 90%;
-display: flex;
-align-items: center;
-justify-content: center;
 color: #fff;
 gap: 1rem;
 line-height: 1.3rem;
